@@ -35,10 +35,3 @@ checkPalin("oppo");
 
 btnCheck.addEventListener("click", checkPalin); 
 
-// someString = "2002";
-// someString = 'lol';
-// someString= "101"; 
-// someString = "hello"; 
-
-// let y = checkPalin("someString"); 
-// console.log(y) ; 
