@@ -19,9 +19,8 @@ body {
 
 .wrapper {
     max-width: 1000px;
-    margin: 0 auto;
-    /* border: 2px solid var(--color4);  */
-    /* border-bottom: 2px solid var(--color3);     */
+    margin: 0 auto;    
+    border-bottom: 2px solid var(--color4);    
 }
 
 h1 {
@@ -33,15 +32,13 @@ main>div{
     font-size: 1.5rem;
 }
 
-label, input {
-    /* border: 1px solid red;  */
+label, input {    
     height: 2rem;
     margin: 0.8rem; 
     font-weight: 600;
 }
 
-input {
-    /* height: 2.5rem;  */
+input {  
     width: 300px; 
 }
 
@@ -49,8 +46,7 @@ input {
 #btn-check {
     width : 150px; 
     padding: 12px; 
-    border: none;
-    /* margin-left: 1.1rem;  */
+    border: none;    
     margin: 2rem auto ; 
     background-color: var(--color4);
     color: var(--color3);
@@ -59,11 +55,9 @@ input {
 }
 
 p {
-    max-width: 800px;
-    /* background-color: var(--color2); */
+    max-width: 800px;    
     color: var(--color2);
-    height: 5vh; 
-    /* text-align: ; */
+    height: 5vh;     
     margin: 0 auto; 
     padding: 1rem;
     font-size: 1.5rem;

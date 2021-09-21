@@ -1,27 +1,27 @@
-
-function  reverseIt(someString) {
+function reverseIt(someString) {
     // console.log(str); 
-   
+
     let splitInput = someString.split('');
 
     let reversedDate = splitInput.reverse();
 
-    let joinReversed = reversedDate.join(''); 
+    let joinReversed = reversedDate.join('');
 
     // console.log(joinReversed);
 
-    return joinReversed; 
+    return joinReversed;
 
 }
 
 
 function checkPalin(someString) {
-    let backwards = reverseIt(someString); 
-    
-    if (someString === backwards ) {
-        return true;       
-    } else { 
-        return false}
+    let backwards = reverseIt(someString);
+
+    if (someString === backwards) {
+        return true;
+    } else {
+        return false
+    }
 }
 
 // console.log(checkPalin("101"));
@@ -39,23 +39,27 @@ function checkPalin(someString) {
 
 function convertDateToString(date) {
 
-    var dateStr = {day: '' , month: '', year: ''};
+    var dateStr = {
+        day: '',
+        month: '',
+        year: ''
+    };
 
-    if (date.day < 10){
+    if (date.day < 10) {
         dateStr.day = '0' + date.day;
     } else {
-        dateStr.day = date.day.toString() ;
+        dateStr.day = date.day.toString();
     }
 
     if (date.month < 10) {
         dateStr.month = '0' + date.month;
     } else {
-        dateStr.month = date.month.toString() ; 
+        dateStr.month = date.month.toString();
     }
 
 
-    dateStr.year = date.year.toString(); 
-    return dateStr; 
+    dateStr.year = date.year.toString();
+    return dateStr;
 
 
 }
@@ -63,16 +67,16 @@ function convertDateToString(date) {
 // console.log(convertDateToString(date)); 
 
 function getAllDateFormats(date) {
-    var dateStr = convertDateToString(date); 
+    var dateStr = convertDateToString(date);
 
-   let ddmmyyyy = dateStr.day + dateStr.month + dateStr.year; 
-   let mmddyyyy = dateStr.month + dateStr.day + dateStr.year; 
-   let yyyymmdd = dateStr.year + dateStr.month + dateStr.day;
-   let ddmmyy = dateStr.day + dateStr.month + dateStr.year.slice(-2); 
-   let mmddyy = dateStr.month + dateStr.day + dateStr.year.slice(-2); 
-   let yymmdd = dateStr.year.slice(-2) + dateStr.month + dateStr.day;
+    let ddmmyyyy = dateStr.day + dateStr.month + dateStr.year;
+    let mmddyyyy = dateStr.month + dateStr.day + dateStr.year;
+    let yyyymmdd = dateStr.year + dateStr.month + dateStr.day;
+    let ddmmyy = dateStr.day + dateStr.month + dateStr.year.slice(-2);
+    let mmddyy = dateStr.month + dateStr.day + dateStr.year.slice(-2);
+    let yymmdd = dateStr.year.slice(-2) + dateStr.month + dateStr.day;
 
-   return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
+    return [ddmmyyyy, mmddyyyy, yyyymmdd, ddmmyy, mmddyy, yymmdd];
 
 }
 
@@ -87,57 +91,57 @@ function getAllDateFormats(date) {
 function checkPalindromForDateFormats(date) {
     let listOfPalindromes = getAllDateFormats(date);
 
-    let yesPalindrome = false ;
+    let yesPalindrome = false;
 
-    for (let i=0; i<listOfPalindromes.length; i++) {
+    for (let i = 0; i < listOfPalindromes.length; i++) {
         if (checkPalin(listOfPalindromes[i])) {
             yesPalindrome = true;
             break;
         }
     }
-    return yesPalindrome; 
+    return yesPalindrome;
 }
 
 // console.log(checkPalindromForDateFormats(date)); 
 
 // check for leap year
 function isLeapYear(year) {
-    if (year %400 === 0) { 
+    if (year % 400 === 0) {
         return true;
-    } else if ( year % 100 === 0) {
+    } else if (year % 100 === 0) {
         return false;
     } else if (year % 4 === 0) {
         return true;
-    } else { 
-        return false; 
+    } else {
+        return false;
     }
 }
 
 
 // gets next date
 function getNextDate(date) {
-    let day = date.day +1;    // increment the day
+    let day = date.day + 1; // increment the day
     let month = date.month;
-    let year = date.year; 
-    let daysInMonth = [31, 28, 31, 30, 31, 30, 31,31, 30, 31, 30, 31]; 
+    let year = date.year;
+    let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     // check for february 
     if (month === 2) {
         // check for leap year
-        if(isLeapYear(year)) {
-            if(day > 29) {
-                day =1;
-                month++;  // increment the month 
+        if (isLeapYear(year)) {
+            if (day > 29) {
+                day = 1;
+                month++; // increment the month 
             }
         } else {
             if (day > 28) {
                 day = 1;
-                month++; 
+                month++;
             }
-        }  // check for other months 
-    }  else  {    
+        } // check for other months 
+    } else {
         // check if the day exceeds the max days in month
-        if (day > daysInMonth[month -1]) {
+        if (day > daysInMonth[month - 1]) {
             day = 1;
             month++; // increment the month 
         }
@@ -146,13 +150,13 @@ function getNextDate(date) {
     // if month is greater than 12 than increment the year
     if (month > 12) {
         month = 1;
-        year++; 
+        year++;
     }
     return {
-        day : day,
-        month : month,
-        year : year
-    } 
+        day: day,
+        month: month,
+        year: year
+    }
     // this returned is new date object 
 
 }
@@ -164,19 +168,19 @@ function getNextDate(date) {
 
 // get next palindrome date 
 function getNextPalindromdate(date) {
-    let counter = 0; 
-    let nextDate = getNextDate(date); 
+    let counter = 0;
+    let nextDate = getNextDate(date);
 
-    while(1) {
-        counter++; 
-        let isPalindrome = checkPalindromForDateFormats(nextDate); 
+    while (1) {
+        counter++;
+        let isPalindrome = checkPalindromForDateFormats(nextDate);
         if (isPalindrome) {
             break;
         } else {
             nextDate = getNextDate(nextDate);
         }
     }
-    return [counter, nextDate] ;
+    return [counter, nextDate];
 
 }
 
@@ -191,29 +195,23 @@ function clickHandler(e) {
     if (bdayStr !== '') {
         var listOfDates = bdayStr.split('-');
         var date = {
-            day:  Number(listOfDates[2]),
-            month : Number(listOfDates[1]) ,
-            year : Number(listOfDates[0])
+            day: Number(listOfDates[2]),
+            month: Number(listOfDates[1]),
+            year: Number(listOfDates[0])
         }
         console.log(date);
     }
 
-    var seePalindrome = checkPalindromForDateFormats(date); 
+    var seePalindrome = checkPalindromForDateFormats(date);
     // console.log(seePalindrome + " is see palindrome"); 
 
-    if(seePalindrome) {
+    if (seePalindrome) {
         showOutput.innerText = "Your Birthday is Plaindrome! "
     } else {
-        let [counter, nextDate] = getNextPalindromdate(date); 
-        showOutput.innerText = `The next palindrome date is ${nextDate.day} -${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!`;   
+        let [counter, nextDate] = getNextPalindromdate(date);
+        showOutput.innerText = `The next palindrome date is ${nextDate.day} -${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!`;
     }
-
-
-
-
-
-
 }
 
 
-btnCheck.addEventListener("click", clickHandler); 
+btnCheck.addEventListener("click", clickHandler);
