@@ -14,40 +14,41 @@ body {
     color: var(--color2);
     margin: 0;
     padding: 0;
-    font-family:'Be Vietnam Pro', sans-serif; 
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .wrapper {
     max-width: 1000px;
-    margin: 0 auto;    
-    border-bottom: 2px solid var(--color4);    
+    margin: 0 auto;
+    border-bottom: 2px solid var(--color4);
 }
 
 h1 {
-    margin: 2rem; 
+    margin: 2rem;
     font-size: 2.8rem;
 }
 
-main>div{ 
+main>div {
     font-size: 1.5rem;
 }
 
-label, input {    
+label,
+input {
     height: 2rem;
-    margin: 0.8rem; 
+    margin: 0.8rem;
     font-weight: 600;
 }
 
-input {  
-    width: 300px; 
+input {
+    width: 300px;
 }
 
 
 #btn-check {
-    width : 150px; 
-    padding: 12px; 
-    border: none;    
-    margin: 2rem auto ; 
+    width: 150px;
+    padding: 12px;
+    border: none;
+    margin: 2rem auto;
     background-color: var(--color4);
     color: var(--color3);
     font-size: large;
@@ -55,10 +56,10 @@ input {
 }
 
 p {
-    max-width: 800px;    
+    max-width: 800px;
     color: var(--color2);
-    height: 5vh;     
-    margin: 0 auto; 
+    height: 5vh;
+    margin: 0 auto;
     padding: 1rem;
     font-size: 1.5rem;
 }
