@@ -206,7 +206,7 @@ function clickHandler(e) {
     // console.log(seePalindrome + " is see palindrome"); 
 
     if (seePalindrome) {
-        showOutput.innerText = "Your Birthday is Plaindrome! "
+        showOutput.innerText = "Your Birthday is Palindrome! "
     } else {
         let [counter, nextDate] = getNextPalindromdate(date);
         showOutput.innerText = `The next palindrome date is ${nextDate.day} -${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!`;
