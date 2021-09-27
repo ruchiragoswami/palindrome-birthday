@@ -190,17 +190,31 @@ let dob = document.querySelector("#dateInput");
 let btnCheck = document.querySelector("#btn-check");
 let showOutput = document.querySelector("#showOutput");
 
-function clickHandler(e) {
+// btnCheck.style.display = 'none'; 
+
+// btnCheck.disabled= true; 
+
+function clickHandler(e) {     
     var bdayStr = dateInput.value;
     if (bdayStr !== '') {
+        // btnCheck.disabled = false; 
+        // btnCheck.style.display = 'block'; 
+
         var listOfDates = bdayStr.split('-');
         var date = {
             day: Number(listOfDates[2]),
             month: Number(listOfDates[1]),
             year: Number(listOfDates[0])
-        }
-        console.log(date);
+        }        
+        console.log(date);    
+        
+        // if (date.day == "" || date.month == "" || date.year == "")
+    } else {
+        console.log("give some inpout");
+        showOutput.innerText = "Please give some valid input!";
     }
+    
+    
 
     var seePalindrome = checkPalindromForDateFormats(date);
     // console.log(seePalindrome + " is see palindrome"); 
