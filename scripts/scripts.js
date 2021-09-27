@@ -190,27 +190,22 @@ let dob = document.querySelector("#dateInput");
 let btnCheck = document.querySelector("#btn-check");
 let showOutput = document.querySelector("#showOutput");
 
-// btnCheck.style.display = 'none'; 
 
-// btnCheck.disabled= true; 
-
-function clickHandler(e) {     
+function clickHandler(e) {
     var bdayStr = dateInput.value;
     if (bdayStr !== '') {
-        // btnCheck.disabled = false; 
-        // btnCheck.style.display = 'block'; 
 
         var listOfDates = bdayStr.split('-');
         var date = {
             day: Number(listOfDates[2]),
             month: Number(listOfDates[1]),
             year: Number(listOfDates[0])
-        }        
-        console.log(date);    
+        }
+        console.log(date);
 
         var seePalindrome = checkPalindromForDateFormats(date);
         // console.log(seePalindrome + " is see palindrome"); 
-    
+
         if (seePalindrome) {
             showOutput.innerText = "Your Birthday is Palindrome! "
         } else {
@@ -218,16 +213,12 @@ function clickHandler(e) {
             showOutput.innerText = `The next palindrome date is ${nextDate.day} -${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!`;
         }
 
-        
-        // if (date.day == "" || date.month == "" || date.year == "")
     } else {
         console.log("give some inpout");
         showOutput.innerText = "Please give some valid input!";
     }
-    
-    
 
-   
+
 }
 
 
