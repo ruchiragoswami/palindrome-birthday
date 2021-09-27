@@ -207,6 +207,17 @@ function clickHandler(e) {
             year: Number(listOfDates[0])
         }        
         console.log(date);    
+
+        var seePalindrome = checkPalindromForDateFormats(date);
+        // console.log(seePalindrome + " is see palindrome"); 
+    
+        if (seePalindrome) {
+            showOutput.innerText = "Your Birthday is Palindrome! "
+        } else {
+            let [counter, nextDate] = getNextPalindromdate(date);
+            showOutput.innerText = `The next palindrome date is ${nextDate.day} -${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!`;
+        }
+
         
         // if (date.day == "" || date.month == "" || date.year == "")
     } else {
@@ -216,15 +227,7 @@ function clickHandler(e) {
     
     
 
-    var seePalindrome = checkPalindromForDateFormats(date);
-    // console.log(seePalindrome + " is see palindrome"); 
-
-    if (seePalindrome) {
-        showOutput.innerText = "Your Birthday is Palindrome! "
-    } else {
-        let [counter, nextDate] = getNextPalindromdate(date);
-        showOutput.innerText = `The next palindrome date is ${nextDate.day} -${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!`;
-    }
+   
 }
 
 
